@@ -10,7 +10,10 @@ const questions = [
     "Installation instructions: ",
     "Usage information: ",
     "Contribution guidelines: ",
-    "Test instructions: "
+    "Test instructions: ",
+    "Please choose a license: ",
+    "Please input your GitHub username: ",
+    "Please input your email address: "
 ];
 
 // function to write README file
@@ -53,9 +56,24 @@ function init() {
             type: "input",
             message: questions[5],
             name: "test"
+        },
+        {
+            type: "list",
+            message: questions[6],
+            name: "license",
+            choices: ["MIT", "GNU GPL v3", "ISC", "Apache 2.0"]
+        },
+        {
+            type: "input",
+            message: questions[7],
+            name: "github"
+        },
+        {
+            type: "input",
+            message: questions[8],
+            name: "email"
         }
     ]).then(response => {
-        console.log(response);
         writeToFile("README.md", generateMarkdown(response));
     }).catch(error => {
         console.log(error);

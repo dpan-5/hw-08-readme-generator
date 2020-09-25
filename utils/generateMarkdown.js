@@ -1,6 +1,28 @@
 // function to generate markdown for README
 function generateMarkdown(data) {
-  return `# ${data.title}
+  let licenseBadge = "";
+  let licenseURL = "";
+
+  switch(data.license) {
+    case "MIT":
+      licenseBadge = "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)";
+      licenseURL = "https://opensource.org/licenses/MIT";
+      break;
+    case "GNU GPL v3":
+      licenseBadge = "[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)";
+      licenseURL = "https://www.gnu.org/licenses/gpl-3.0"; 
+      break;
+    case "ISC":
+      licenseBadge = "[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)";
+      licenseURL = "https://opensource.org/licenses/ISC";
+      break;
+    case "Apache 2.0":
+      licenseBadge = "[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)";
+      licenseURL = "https://opensource.org/licenses/Apache-2.0";
+  }
+
+
+  return `# ${data.title} · ${licenseBadge}
 
   ## Description
 
@@ -11,9 +33,10 @@ function generateMarkdown(data) {
   
   * [Installation](#installation)
   * [Usage](#usage)
-  * [Contribution](#contributing)
+  * [Contributing](#contributing)
   * [Tests](#tests)
   * [License](#license)
+  * [Questions](#questions)
   
   
   ## Installation
@@ -27,35 +50,21 @@ function generateMarkdown(data) {
   
   ## Contributing
     
-  If you created an application or package and would like other developers to contribute it, you will want to add guidelines for how to do so. The [Contributor Covenant](https://www.contributor-covenant.org/) is an industry standard, but you can always write your own.
+  ${data.contribution}
 
   ## Tests
 
-  Go the extra mile and write tests for your application. Then provide examples on how to run them.
+  ${data.test}
 
-    
-  
   ## License
   
-  The last section of a good README is a license. This lets other developers know what they can and cannot do with your project. If you need help choosing a license, use [https://choosealicense.com/](https://choosealicense.com/)
-  
-  
-  ---
-  
-  🏆 The sections listed above are the minimum for a good README, but your project will ultimately determine the content of this document. You might also want to consider adding the following sections.
-  
-  ## Badges
-  
-  ![badmath](https://img.shields.io/github/languages/top/nielsenjared/badmath)
-  
-  Badges aren't _necessary_, per se, but they demonstrate street cred. Badges let other developers know that you know what you're doing. Check out the badges hosted by [shields.io](https://shields.io/). You may not understand what they all represent now, but you will in time.
-  
+  ${data.title} is [${data.license} licensed](${licenseURL}).
 
-  
-  ---
-  © 2019 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
-  
+  ## Questions
 
+  Link to my [GitHub](https://github.com/${data.github})
+  
+  If you have additional questions, you can reach me at: ${data.email}
 `;
 }
 
