@@ -10,6 +10,7 @@
   * [Installation](#installation)
   * [Usage](#usage)
   * [Contributing](#contributing)
+  * [Tests](#tests)
   * [License](#license)
   * [Questions](#questions)
   
@@ -37,6 +38,8 @@ A series of prompts will appear, collecting user input.
   - Keep descriptions short and simple, but descriptive
   - Check your spelling and grammar
 
+  ## Tests
+  No tests available
 
   ## License
   
