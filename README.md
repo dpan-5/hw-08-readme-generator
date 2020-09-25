@@ -31,6 +31,8 @@ node index.js
 ```
 
 A series of prompts will appear, collecting user input.
+
+[Video Demo](https://drive.google.com/file/d/1nwfhMGwU5esU54iJ-nsi_Ee_VBlkpTsB/view)
   
   ## Contributing
     
